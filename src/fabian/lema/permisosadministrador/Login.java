@@ -1,20 +1,24 @@
 /**
  * 
  */
-package fabian.lema.actualizar;
+package fabian.lema.permisosadministrador;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 /**
  * @author fabian.lema
  *
  */
-public class Update {
-	    static String s = null;
+public class Login {
 
-	    public static void ejecutarUpdate(){
+	/**
+	 * @param args
+	 */
+	static String s = null;
+public static void ejecutarSudo(){
 	        
 	        try {
 	            // Determinar en qué SO estamos
@@ -24,8 +28,21 @@ public class Update {
 
 	        // Comando para Linux
 	        if (sistemaOperativo.equals("Linux")) {
-	            comando = "sudo apt-get update";
+	            comando = "xterm su root";
 	        }
+	        /*// Pedimos la contraseña de administrador
+	        
+	        //Creamos una instancia de Scanner
+	        Scanner in = new Scanner(System.in);
+	        //Declaramos las variables a usar
+	        String contraseñaRoot;
+	        //Preguntamos al usuario
+	        System.out.println("Por favor introduce la contraseña de root");
+	        contraseñaRoot = in.next();
+	        //Cerramos instancia
+	        in.close();*/
+	        //Hacemos que el usuario se loguee como administrador
+	        System.out.println("Por favor logueate como usuario root");
 	        // Ejecutamos el comando
 	        Process p = Runtime.getRuntime().exec(comando);
 
@@ -58,7 +75,7 @@ public class Update {
 	        System.exit(-1);
 
 	    }
-	}
+
 	}
 
-
+}
